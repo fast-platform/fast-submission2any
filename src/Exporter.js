@@ -2,7 +2,7 @@ import Formatter from 'fast-submission2csv';
 import XLS from 'xlsx';
 
 let Exporter = class {
-  static async xlsx({ output, options, data, formioForm, translations, language }) {
+  static async to({ output, options, data, formioForm, translations, language }) {
     let aoa = await Formatter.csv({
       output: 'csv',
       data: data,

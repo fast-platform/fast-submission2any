@@ -92,7 +92,7 @@ Using the Exporter with promises
 ```javascript
 import Exporter from 'fast-submission2any';
 
-file = Exporter.xlsx({
+file = Exporter.to({
   output,
   options,
   data,
@@ -109,7 +109,7 @@ Using the Exporter with Await
 ```javascript
 import Exporter from 'fast-submission2any';
 
-output = await Exporter.xlsx({output, options, data, formioForm, translations, language })
+output = await Exporter.to({output, options, data, formioForm, translations, language })
   if(output){
     // console.log('The file was generated', output)
   }
@@ -142,7 +142,7 @@ Short Example
 ```javascript
 import Exporter from 'fast-submission2any';
 
-  let output = await  Exporter.xlsx({
+  let output = await  Exporter.to({
           output,           // {String} i.e 'xlsx'
           options,          // {Object} Options object
           data,             // {Array} Form.io submissions
@@ -160,7 +160,7 @@ Short Example + Download
 import Exporter from 'fast-submission2any';
 import Download from 'fast-downloads';
 
-  let output = await  Exporter.xlsx({
+  let output = await  Exporter.to({
           output,           // {String} i.e 'xlsx'
           options,           // {Object} Options object
           data,             // {Array} Form.io submissions
@@ -307,7 +307,7 @@ let formioForm = {
 }
 
 
-  let output = await  Exporter.xlsx({
+  let output = await  Exporter.to({
           output,
           options,
           data,
