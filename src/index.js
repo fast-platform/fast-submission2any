@@ -1,3 +1,3 @@
-import Download from './Download.js';
+import Exporter from './Exporter.js';
 
-export default Download;
+export default Exporter;
