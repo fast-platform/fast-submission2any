@@ -7,7 +7,7 @@ let Exporter = class {
 
     switch (output.toLowerCase()) {
       case 'csv':
-        let file = await Exporter.csv({
+        let file = await Formatter.csv({
           data,
           formioForm,
           translations,
@@ -17,7 +17,7 @@ let Exporter = class {
         exportedFile = file.csv;
         break;
       case 'json':
-        let jsonFile = await Exporter.format({
+        let jsonFile = await Formatter.format({
           data,
           formioForm,
           translations,

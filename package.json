@@ -13,7 +13,13 @@
     "type": "git",
     "url": "https://github.com/UN-FAO/fast-submission2any"
   },
-  "keywords": ["form.io", "excel", "cordova", "browser", "browser excel"],
+  "keywords": [
+    "form.io",
+    "excel",
+    "cordova",
+    "browser",
+    "browser excel"
+  ],
   "author": "Ignacio Cabrera",
   "license": "MIT",
   "bugs": {
