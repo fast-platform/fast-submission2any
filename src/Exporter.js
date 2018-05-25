@@ -3,27 +3,52 @@ import XLS from 'xlsx';
 
 let Exporter = class {
   static async to({ output, options, data, formioForm, translations, language }) {
-    let aoa = await Formatter.csv({
-      output: 'csv',
-      data: data,
-      formioForm,
-      translations,
-      language,
-      options: {
-        rawArray: true
-      }
-    });
+    let exportedFile;
 
-    let ws = XLS.utils.aoa_to_sheet(aoa.result);
-    let workbook = XLS.utils.book_new();
+    switch (output.toLowerCase()) {
+      case 'csv':
+        let file = await Exporter.csv({
+          data,
+          formioForm,
+          translations,
+          language
+        });
 
-    XLS.utils.book_append_sheet(workbook, ws, 'Sheet1');
+        exportedFile = file.csv;
+        break;
+      case 'json':
+        let jsonFile = await Exporter.format({
+          data,
+          formioForm,
+          translations,
+          language
+        });
 
-    let wopts = { bookType: output, bookSST: false, type: 'array' };
+        exportedFile = JSON.stringify(jsonFile.data);
 
-    let wbout = XLS.write(workbook, wopts);
+        break;
+      default:
+        let aoa = await Formatter.csv({
+          data: data,
+          formioForm,
+          translations,
+          language,
+          options: {
+            rawArray: true
+          }
+        });
 
-    return wbout;
+        let ws = XLS.utils.aoa_to_sheet(aoa.result);
+        let workbook = XLS.utils.book_new();
+
+        XLS.utils.book_append_sheet(workbook, ws, 'Sheet1');
+
+        let wopts = { bookType: output, bookSST: false, type: 'array' };
+
+        exportedFile = XLS.write(workbook, wopts);
+        break;
+    }
+    return exportedFile;
   }
 };
 

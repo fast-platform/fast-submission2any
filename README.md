@@ -119,6 +119,8 @@ Supported Output Formats
 
 | Ouput String | Description                     |
 | ------------ | ------------------------------- |
+| csv          | Comma seeparated values         |
+| json         | Javascript Object Notation      |
 | xlsx         | Excel 2007+ XML Format          |
 | xlsm         | Excel 2007+ Macro XML Format    |
 | xlsb         | Excel 2007+ Binary Format       |
