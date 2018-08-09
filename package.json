@@ -1,6 +1,6 @@
 {
   "name": "fast-submission2any",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Generates an Excel file from an array of Form.io submissions",
   "main": "lib/fast-submission2any.js",
   "scripts": {
@@ -13,7 +13,13 @@
     "type": "git",
     "url": "https://github.com/UN-FAO/fast-submission2any"
   },
-  "keywords": ["form.io", "excel", "cordova", "browser", "browser excel"],
+  "keywords": [
+    "form.io",
+    "excel",
+    "cordova",
+    "browser",
+    "browser excel"
+  ],
   "author": "Ignacio Cabrera",
   "license": "MIT",
   "bugs": {
@@ -38,7 +44,7 @@
     "yargs": "^10.0.3"
   },
   "dependencies": {
-    "fast-submission2csv": "0.0.14",
+    "fast-submission2csv": "0.0.18",
     "xlsx": "^0.12.12"
   }
 }
